@@ -65,9 +65,18 @@
                      class="ri-settings-2-line align-middle me-1"></i> Settings</a>
                <a class="dropdown-item" href="#"><i class="ri-lock-unlock-line align-middle me-1"></i>
                   Lock screen</a>
-               <div class="dropdown-divider"></div>
-               <a class="dropdown-item text-danger" href="#"><i
-                     class="ri-shut-down-line align-middle me-1 text-danger"></i> Logout</a>
+               {{-- <div class="dropdown-divider"></div>
+               <a class="dropdown-item text-danger" href=""><i
+                     class="ri-shut-down-line align-middle me-1 text-danger"></i> Logout</a> --}}
+               <form method="POST" action="{{ route('admin.logout') }}">
+                  @csrf
+
+                  <x-dropdown-link :href="route('admin.logout')"
+                     onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                     {{ __('Log Out') }}
+                  </x-dropdown-link>
+               </form>
             </div>
          </div>
 
