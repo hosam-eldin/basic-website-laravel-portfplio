@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
+use GuzzleHttp\Psr7\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,17 +22,24 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('admin.index');
+    return view('admin.index', [
+        'user' => Auth::user()
+    ]);
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::post('/admin/logout', [AdminController::class, 'destroy'])->name('admin.logout');
+Route::controller(AdminController::class)->group(function () {
+    Route::post('/admin/logout', 'destroy')->name('admin.logout');
+    Route::get('/admin/profile', 'profile')->name('admin.profile');
+    Route::get('/admin/profile/edit', 'editProfile')->name('admin.profile.edit');
+    Route::post('/admin/profile/update', 'updateProfile')->name('admin.profile.update');
+})->middleware(['auth']);
 
 
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+// Route::middleware('auth')->group(function () {
+//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+// });
 
 require __DIR__ . '/auth.php';

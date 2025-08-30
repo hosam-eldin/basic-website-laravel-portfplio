@@ -12,7 +12,7 @@
                </span>
             </a>
 
-            <a href="index.html" class="logo logo-light">
+            <a href="{{ route('dashboard') }}" class="logo logo-light">
                <span class="logo-sm">
                   <img src="{{ asset('backend/assets/images/logo-sm.png') }}" alt="logo-sm-light" height="22">
                </span>
@@ -51,13 +51,15 @@
             <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                <img class="rounded-circle header-profile-user"
-                  src="{{ asset('backend/assets/images/users/avatar-1.jpg') }}" alt="Header Avatar">
-               <span class="d-none d-xl-inline-block ms-1">Julia</span>
+                  src="{{ $user->profile_image ? asset('upload/admin_images/' . $user->profile_image) : gravatar($user->email, 150) }}"
+                  alt="Header Avatar">
+               <span class="d-none d-xl-inline-block ms-1">{{ $user->name }}</span>
                <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
             </button>
             <div class="dropdown-menu dropdown-menu-end">
                <!-- item-->
-               <a class="dropdown-item" href="#"><i class="ri-user-line align-middle me-1"></i>
+               <a class="dropdown-item" href="{{ route('admin.profile') }}"><i
+                     class="ri-user-line align-middle me-1"></i>
                   Profile</a>
                <a class="dropdown-item" href="#"><i class="ri-wallet-2-line align-middle me-1"></i> My
                   Wallet</a>
@@ -70,6 +72,7 @@
                      class="ri-shut-down-line align-middle me-1 text-danger"></i> Logout</a> --}}
                <form method="POST" action="{{ route('admin.logout') }}">
                   @csrf
+
 
                   <x-dropdown-link :href="route('admin.logout')"
                      onclick="event.preventDefault();
