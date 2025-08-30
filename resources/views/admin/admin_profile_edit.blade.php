@@ -13,32 +13,32 @@
                         <div class="row mb-3">
                            <label for="name" class="col-sm-2 col-form-label">Name</label>
                            <div class="col-sm-10">
-                              <input class="form-control" type="text" placeholder="Artisanal kale" id="name"
-                                 name="name" value="{{ $user->name }}">
+                              <input class="form-control" type="text" id="name" name="name"
+                                 value="{{ $user->name }}">
                            </div>
                         </div>
 
                         <div class="row mb-3">
                            <label for="email" class="col-sm-2 col-form-label">Email</label>
                            <div class="col-sm-10">
-                              <input class="form-control" type="email" placeholder="bootstrap@example.com" id="email"
-                                 name="email" value="{{ $user->email }}">
+                              <input class="form-control" type="email" id="email" name="email"
+                                 value="{{ $user->email }}">
                            </div>
                         </div>
 
                         <div class="row mb-3">
                            <label for="user_name" class="col-sm-2 col-form-label">UserName</label>
                            <div class="col-sm-10">
-                              <input class="form-control" type="text" placeholder="Artisanal kale" id="user_name"
-                                 name="user_name" value="{{ $user->user_name }}">
+                              <input class="form-control" type="text" id="user_name" name="user_name"
+                                 value="{{ $user->user_name }}">
                            </div>
                         </div>
 
                         <div class="row mb-3">
                            <label for="image" class="col-sm-2 col-form-label">Profile Image</label>
                            <div class="col-sm-10">
-                              <input class="form-control" type="file" placeholder="Artisanal kale" id="image"
-                                 name="profile_image" value="{{ $user->user_image ?? '' }}">
+                              <input class="form-control" type="file" id="image" name="profile_image"
+                                 value="{{ $user->user_image ?? '' }}">
                            </div>
                         </div>
 
