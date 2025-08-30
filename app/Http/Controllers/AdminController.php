@@ -18,7 +18,7 @@ class AdminController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('login');
+        return redirect('login')->with('success', 'User logout successfully.');
     }
 
     public function profile(Request $request)
@@ -51,9 +51,8 @@ class AdminController extends Controller
             }
             $user->profile_image = $filename;
         }
-
         $user->save();
 
-        return redirect()->route('admin.profile')->with('success', 'Profile updated successfully.');
+        return redirect()->route('admin.profile')->with('success', ' ِAdmin Profile updated successfully.');
     }
 }
