@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\HomeSliderController;
 use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -36,12 +37,13 @@ Route::controller(AdminController::class)->group(function () {
     Route::post('/admin/profile/changePassword', 'changePassword')->name('admin.change.password');
 })->middleware(['auth']);
 
+Route::controller(HomeSliderController::class)->group(function () {
+    Route::get('home/slider', 'homeSlider')->name('home.slide');
+    Route::post('home/slider/update', 'homeSliderUpdate')->name('home.slide.update');
+})->middleware(['auth']);
 
 
-// Route::middleware('auth')->group(function () {
-//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-// });
+
+// 
 
 require __DIR__ . '/auth.php';

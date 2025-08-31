@@ -7,7 +7,7 @@
             <div class="col-8">
                <div class="card">
                   <div class="card-body">
-
+                     <h4 class="card-title">Edit Profile Page</h4>
                      <form action="{{ route('admin.profile.update') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row mb-3">

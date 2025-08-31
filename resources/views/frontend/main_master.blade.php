@@ -49,7 +49,9 @@
 
 
    <!-- Footer-area -->
-   @include('frontend.body.footer')
+   <footer class="footer">
+      @include('frontend.body.footer')
+   </footer>
    <!-- Footer-area-end -->
 
 
