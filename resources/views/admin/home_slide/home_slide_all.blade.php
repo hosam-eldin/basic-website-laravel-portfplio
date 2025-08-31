@@ -10,6 +10,7 @@
                      <h4 class="card-title">Home Slide Page</h4>
                      <form action="{{ route('home.slide.update') }}" method="POST" enctype="multipart/form-data">
                         @csrf
+                        <input type="hidden" name="id" value="{{ $homeSlides->id ?? '' }}">
                         <div class="row mb-3">
                            <label for="title" class="col-sm-2 col-form-label">Title</label>
                            <div class="col-sm-10">
@@ -47,7 +48,7 @@
                            <label for="showImage" class="col-sm-2 col-form-label"></label>
                            <div class="col-sm-10">
                               <img id="showImage" class="rounded avatar-lg"
-                                 src="{{ !empty($homeSlides) && !empty($homeSlides->image) ? url('upload/home_slide/' . $homeSlides->image) : asset('upload/no_image.png') }}"
+                                 src="{{ !empty($homeSlides) && !empty($homeSlides->image) ? url($homeSlides->image) : asset('upload/no_image.png') }}"
                                  alt="slider">
                            </div>
                         </div>

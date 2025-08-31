@@ -25,6 +25,7 @@
                </a>
                <ul class="sub-menu" aria-expanded="false">
                   <li><a href="{{ route('home.slide') }}">Home Slide</a></li>
+                  <li><a href="{{ route('about.slide') }}">About Slide</a></li>
 
                </ul>
             </li>
