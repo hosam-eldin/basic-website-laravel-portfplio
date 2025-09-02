@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeSliderController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\MultiImagesController;
 use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -41,12 +42,21 @@ Route::controller(AdminController::class)->group(function () {
 Route::controller(HomeSliderController::class)->group(function () {
     Route::get('home/slider', 'homeSlider')->name('home.slide');
     Route::post('home/slider/update', 'homeSliderUpdate')->name('home.slide.update');
-})->middleware(['auth']);
+});
 
 Route::controller(AboutController::class)->group(function () {
     Route::get('about', 'about')->name('about');
     Route::get('admin/about', 'adminAbout')->name('about.slide');
     Route::post('about/update', 'aboutUpdate')->name('about.update');
-})->middleware(['auth']);
+});
+
+Route::controller(MultiImagesController::class)->group(function () {
+    Route::get('multi/images', 'index')->name('multi.images');
+    Route::post('multi/images/store', 'store')->name('store.multi.images');
+    Route::get('multi/images/store', 'allMultiImages')->name('all.multi.images');
+    Route::get('edit/multi/images/{id}', 'edit')->name('edit.multi.images');
+    Route::post('edit/multi/images/{id}', 'update')->name('update.multi.images');
+    Route::get('delete/multi/images/{id}', 'delete')->name('delete.multi.images');
+});
 
 require __DIR__ . '/auth.php';

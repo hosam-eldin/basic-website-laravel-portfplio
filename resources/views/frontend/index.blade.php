@@ -9,7 +9,7 @@
    <!-- about-area-end -->
 
    <!-- services-area -->
-   <section class="services">
+   {{-- <section class="services">
       <div class="container">
          <div class="services__title__wrap">
             <div class="row align-items-center justify-content-between">
@@ -148,7 +148,7 @@
             </div>
          </div>
       </div>
-   </section>
+   </section> --}}
    <!-- services-area-end -->
 
    <!-- work-process-area -->
@@ -243,8 +243,8 @@
                         type="button" role="tab" aria-controls="website" aria-selected="false">website</button>
                   </li>
                   <li class="nav-item" role="presentation">
-                     <button class="nav-link" id="apps-tab" data-bs-toggle="tab" data-bs-target="#apps"
-                        type="button" role="tab" aria-controls="apps" aria-selected="false">mobile
+                     <button class="nav-link" id="apps-tab" data-bs-toggle="tab" data-bs-target="#apps" type="button"
+                        role="tab" aria-controls="apps" aria-selected="false">mobile
                         apps</button>
                   </li>
                   <li class="nav-item" role="presentation">

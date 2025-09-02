@@ -16,7 +16,7 @@ class AboutController extends Controller
     {
         $user = Auth::user();
         $aboutSlides = About::find(1);
-        return view('admin.home_slide.about_slide', compact('aboutSlides', 'user'));
+        return view('admin.about_page.about_slide_all', compact('aboutSlides', 'user'));
     }
 
     public function about(Request $request)
