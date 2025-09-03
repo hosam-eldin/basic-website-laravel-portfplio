@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeSliderController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\MultiImagesController;
+use App\Http\Controllers\PortfolioController;
 use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -57,6 +58,17 @@ Route::controller(MultiImagesController::class)->group(function () {
     Route::get('edit/multi/images/{id}', 'edit')->name('edit.multi.images');
     Route::post('edit/multi/images/{id}', 'update')->name('update.multi.images');
     Route::get('delete/multi/images/{id}', 'delete')->name('delete.multi.images');
+});
+
+Route::controller(PortfolioController::class)->group(function () {
+    Route::get('portfolio', 'index')->name('portfolio.index');
+    Route::get('all/portfolio', 'allPortfolio')->name('all.portfolio');
+    Route::get('add/portfolio', 'addPortfolio')->name('add.portfolio');
+    Route::post('store/portfolio', 'storePortfolio')->name('store.portfolio');
+    Route::get('edit/portfolio/{id}', 'editPortfolio')->name('edit.portfolio');
+    Route::post('Update/portfolio/{id}', 'updatePortfolio')->name('update.portfolio');
+    Route::get('delete/portfolio/{id}', 'deletePortfolio')->name('delete.portfolio');
+    Route::get('portfolio/details/{id}', 'portfolioDetails')->name('portfolio.details');
 });
 
 require __DIR__ . '/auth.php';

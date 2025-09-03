@@ -34,7 +34,7 @@ class MultiImagesController extends Controller
     {
 
         $images = $request->file('images');
-        // $oldImage = MultiImages::find($multiImage->id)->image;
+
 
         foreach ($images as $multiImage) {
             $filename = hexdec(uniqid()) . '.' . $multiImage->getClientOriginalExtension();
@@ -51,10 +51,6 @@ class MultiImagesController extends Controller
                 'message' => 'Multi Images inserted Successfully',
                 'alert-type' => 'success'
             );
-            // // حذف الصورة القديمة لو موجودة
-            // if ($oldImage && file_exists(public_path($oldImage))) {
-            //     unlink(public_path($oldImage));
-
         }
         return redirect()->back()->with($notification);
     } //end of function
