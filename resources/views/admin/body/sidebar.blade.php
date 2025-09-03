@@ -10,27 +10,43 @@
             <li class="menu-title">Menu</li>
 
             <li>
-               <a href="index.html" class="waves-effect">
+               <a href="{{ route('dashboard') }}" class="waves-effect">
                   <i class="ri-dashboard-line"></i><span class="badge rounded-pill bg-success float-end">3</span>
                   <span>Dashboard</span>
                </a>
             </li>
 
+
+
             <li>
-               <a href="calendar.html" class=" waves-effect">
-                  <i class="ri-calendar-2-line"></i>
-                  <span>Calendar</span>
+               <a href="javascript: void(0);" class="has-arrow waves-effect">
+                  <i class="ri-mail-send-line"></i>
+                  <span>Home Slide Setup</span>
                </a>
+               <ul class="sub-menu" aria-expanded="false">
+                  <li><a href="{{ route('home.slide') }}">Home Slide Setup</a></li>
+               </ul>
+            </li>
+            <li>
+               <a href="javascript: void(0);" class="has-arrow waves-effect">
+                  <i class="ri-mail-send-line"></i>
+                  <span>About Page Setup</span>
+               </a>
+               <ul class="sub-menu" aria-expanded="false">
+                  <li><a href="{{ route('about.slide') }}">About Page</a></li>
+                  <li><a href="{{ route('multi.images') }}">About Multi Images</a></li>
+                  <li><a href="{{ route('all.multi.images') }}">All Multi Images</a></li>
+               </ul>
             </li>
 
             <li>
                <a href="javascript: void(0);" class="has-arrow waves-effect">
                   <i class="ri-mail-send-line"></i>
-                  <span>Email</span>
+                  <span>Portfolio Page Setup</span>
                </a>
                <ul class="sub-menu" aria-expanded="false">
-                  <li><a href="email-inbox.html">Inbox</a></li>
-                  <li><a href="email-read.html">Read Email</a></li>
+                  <li><a href="{{ route('all.portfolio') }}">All Portfolio</a></li>
+                  <li><a href="{{ route('add.portfolio') }}">Add Portfolio</a></li>
                </ul>
             </li>
 

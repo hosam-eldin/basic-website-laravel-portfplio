@@ -2,6 +2,10 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\HomeSliderController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\MultiImagesController;
+use App\Http\Controllers\PortfolioController;
 use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -36,12 +40,35 @@ Route::controller(AdminController::class)->group(function () {
     Route::post('/admin/profile/changePassword', 'changePassword')->name('admin.change.password');
 })->middleware(['auth']);
 
+Route::controller(HomeSliderController::class)->group(function () {
+    Route::get('home/slider', 'homeSlider')->name('home.slide');
+    Route::post('home/slider/update', 'homeSliderUpdate')->name('home.slide.update');
+});
 
+Route::controller(AboutController::class)->group(function () {
+    Route::get('about', 'about')->name('about');
+    Route::get('admin/about', 'adminAbout')->name('about.slide');
+    Route::post('about/update', 'aboutUpdate')->name('about.update');
+});
 
-// Route::middleware('auth')->group(function () {
-//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-// });
+Route::controller(MultiImagesController::class)->group(function () {
+    Route::get('multi/images', 'index')->name('multi.images');
+    Route::post('multi/images/store', 'store')->name('store.multi.images');
+    Route::get('multi/images/store', 'allMultiImages')->name('all.multi.images');
+    Route::get('edit/multi/images/{id}', 'edit')->name('edit.multi.images');
+    Route::post('edit/multi/images/{id}', 'update')->name('update.multi.images');
+    Route::get('delete/multi/images/{id}', 'delete')->name('delete.multi.images');
+});
+
+Route::controller(PortfolioController::class)->group(function () {
+    Route::get('portfolio', 'index')->name('portfolio.index');
+    Route::get('all/portfolio', 'allPortfolio')->name('all.portfolio');
+    Route::get('add/portfolio', 'addPortfolio')->name('add.portfolio');
+    Route::post('store/portfolio', 'storePortfolio')->name('store.portfolio');
+    Route::get('edit/portfolio/{id}', 'editPortfolio')->name('edit.portfolio');
+    Route::post('Update/portfolio/{id}', 'updatePortfolio')->name('update.portfolio');
+    Route::get('delete/portfolio/{id}', 'deletePortfolio')->name('delete.portfolio');
+    Route::get('portfolio/details/{id}', 'portfolioDetails')->name('portfolio.details');
+});
 
 require __DIR__ . '/auth.php';
