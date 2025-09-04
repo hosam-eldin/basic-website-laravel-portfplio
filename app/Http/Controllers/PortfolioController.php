@@ -11,7 +11,7 @@ class PortfolioController extends Controller
     public function index() //frontend
     {
         $user = Auth::user();
-        $portfolios = Portfolio::all();
+        $portfolios = Portfolio::paginate(1);
         return view('frontend.portfolio')->with([
             'user' => $user,
             'portfolios' => $portfolios

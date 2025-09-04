@@ -26,10 +26,10 @@
 
 
                         <tbody>
-                           @php $i = 1; @endphp
-                           @foreach ($portfolios as $item)
+
+                           @foreach ($portfolios as $key => $item)
                               <tr>
-                                 <td>{{ $i++ }}</td>
+                                 <td>{{ $key + 1 }}</td>
                                  <td>{{ $item->portfolio_name }}</td>
                                  <td>{{ $item->portfolio_title }}</td>
                                  <td><img src="{{ asset($item->portfolio_image) }}" style="width:60px; height:60px"></td>
