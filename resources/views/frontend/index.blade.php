@@ -152,7 +152,7 @@
    <!-- services-area-end -->
 
    <!-- work-process-area -->
-   {{-- <section class="work__process">
+   <section class="work__process">
       <div class="container">
          <div class="row justify-content-center">
             <div class="col-xl-6 col-lg-8">
@@ -217,7 +217,7 @@
             </div>
          </div>
       </div>
-   </section> --}}
+   </section>
    <!-- work-process-area-end -->
 
    <!-- portfolio-area -->
@@ -231,28 +231,29 @@
             <div class="col-lg-6">
                <ul class="partner__logo__wrap">
                   <li>
-                     <img class="light" src="assets/img/icons/partner_light01.png" alt="">
-                     <img class="dark" src="assets/img/icons/partner_01.png" alt="">
+                     <img class="light" src="{{ asset('frontend/assets/img/icons/partner_light01.png') }}" alt="">
+                     <img class="dark" src="{{ asset('frontend/assets/img/icons/partner_01.png') }}" alt="">
                   </li>
                   <li>
-                     <img class="light" src="assets/img/icons/partner_light02.png" alt="">
-                     <img class="dark" src="assets/img/icons/partner_02.png" alt="">
+                     <img class="light" src="{{ asset('frontend/assets/img/icons/partner_light02.png') }}" alt="">
+                     <img class="dark" src="{{ asset('frontend/assets/img/icons/partner_02.png') }}" alt="">
                   </li>
                   <li>
-                     <img class="light" src="assets/img/icons/partner_light03.png" alt="">
-                     <img class="dark" src="assets/img/icons/partner_03.png" alt="">
+                     <img class="light" src="{{ asset('frontend/assets/img/icons/partner_light03.png') }}" alt="">
+                     <img class="dark" src="{{ asset('frontend/assets/img/icons/partner_03.png') }}" alt="">
                   </li>
                   <li>
-                     <img class="light" src="assets/img/icons/partner_light04.png" alt="">
-                     <img class="dark" src="assets/img/icons/partner_04.png" alt="">
+                     <img class="light" src="{{ asset('frontend/assets/img/icons/partner_light04.png') }}" alt="">
+                     <img class="dark" src="{{ asset('frontend/assets/img/icons/partner_04.png') }}" alt="">
                   </li>
                   <li>
-                     <img class="light" src="assets/img/icons/partner_light05.png" alt="">
-                     <img class="dark" src="assets/img/icons/partner_05.png" alt="">
+                     <img class="light" src="{{ asset('frontend/assets/img/icons/partner_light05.png') }}" alt="">
+                     <img class="dark" src="{{ asset('frontend/assets/img/icons/partner_05.png') }}" alt="">
                   </li>
                   <li>
-                     <img class="light" src="assets/img/icons/partner_light06.png" alt="">
-                     <img class="dark" src="assets/img/icons/partner_06.png" alt="">
+                     <img class="light" src="{{ asset('frontend/assets/img/icons/partner_light06.png') }}"
+                        alt="">
+                     <img class="dark" src="{{ asset('frontend/assets/img/icons/partner_06.png') }}" alt="">
                   </li>
                </ul>
             </div>
@@ -274,7 +275,7 @@
    <!-- partner-area-end -->
 
    <!-- testimonial-area -->
-   <section class="testimonial">
+   {{-- <section class="testimonial">
       <div class="container">
          <div class="row align-items-center justify-content-between">
             <div class="col-lg-6 order-0 order-lg-2">
@@ -327,11 +328,11 @@
             </div>
          </div>
       </div>
-   </section>
+   </section> --}}
    <!-- testimonial-area-end -->
 
    <!-- blog-area -->
-   <section class="blog">
+   {{-- <section class="blog">
       <div class="container">
          <div class="row gx-0 justify-content-center">
             <div class="col-lg-4 col-md-6 col-sm-9">
@@ -387,7 +388,7 @@
             <a href="blog.html" class="btn">more blog</a>
          </div>
       </div>
-   </section>
+   </section> --}}
    <!-- blog-area-end -->
 
    <!-- contact-area -->

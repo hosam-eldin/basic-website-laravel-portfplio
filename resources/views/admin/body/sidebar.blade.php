@@ -52,6 +52,17 @@
 
             <li>
                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                  <i class="ri-mail-send-line"></i>
+                  <span>Footer Setup</span>
+               </a>
+               <ul class="sub-menu" aria-expanded="false">
+                  <li><a href="{{ route('footer.show') }}">Show Footer</a></li>
+                  <li><a href="{{ route('footer.setup') }}">Add Footer</a></li>
+               </ul>
+            </li>
+
+            {{-- <li>
+               <a href="javascript: void(0);" class="has-arrow waves-effect">
                   <i class="ri-layout-3-line"></i>
                   <span>Layouts</span>
                </a>
@@ -79,11 +90,11 @@
                      </ul>
                   </li>
                </ul>
-            </li>
+            </li> --}}
 
-            <li class="menu-title">Pages</li>
+            {{-- <li class="menu-title">Pages</li> --}}
 
-            <li>
+            {{-- <li>
                <a href="javascript: void(0);" class="has-arrow waves-effect">
                   <i class="ri-account-circle-line"></i>
                   <span>Authentication</span>
@@ -94,9 +105,9 @@
                   <li><a href="auth-recoverpw.html">Recover Password</a></li>
                   <li><a href="auth-lock-screen.html">Lock Screen</a></li>
                </ul>
-            </li>
+            </li> --}}
 
-            <li>
+            {{-- <li>
                <a href="javascript: void(0);" class="has-arrow waves-effect">
                   <i class="ri-profile-line"></i>
                   <span>Utility</span>
@@ -109,7 +120,7 @@
                   <li><a href="pages-404.html">Error 404</a></li>
                   <li><a href="pages-500.html">Error 500</a></li>
                </ul>
-            </li>
+            </li> --}}
 
 
 
