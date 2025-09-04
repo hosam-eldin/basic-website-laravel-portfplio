@@ -60,6 +60,16 @@
                   <li><a href="{{ route('footer.setup') }}">Add Footer</a></li>
                </ul>
             </li>
+            <li>
+               <a href="javascript: void(0);" class="has-arrow waves-effect">
+                  <i class="ri-mail-send-line"></i>
+                  <span>Contact Setup</span>
+               </a>
+               <ul class="sub-menu" aria-expanded="false">
+                  <li><a href="{{ route('admin.contact') }}">Messages</a></li>
+
+               </ul>
+            </li>
 
             {{-- <li>
                <a href="javascript: void(0);" class="has-arrow waves-effect">

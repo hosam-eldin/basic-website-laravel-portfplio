@@ -7,6 +7,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\FooterController;
 use App\Http\Controllers\MultiImagesController;
 use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\ContactController;
 use App\Models\Footer;
 use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Auth;
@@ -80,6 +81,13 @@ Route::controller(FooterController::class)->group(function () {
     Route::get('footer/edit/{id}', 'edit')->name('edit.footer');
     Route::post('footer/update/{id}', 'update')->name('update.footer');
     Route::get('footer/delete/{id}', 'delete')->name('delete.footer');
+});
+
+Route::controller(ContactController::class)->group(function () {
+    Route::get('contact', 'contact')->name('contact');
+    Route::post('contact/store', 'store')->name('contact.store');
+    Route::get('admin/contact', 'adminContact')->name('admin.contact');
+    Route::get('delete/message/{id}', 'deleteMessage')->name('delete.message');
 });
 
 require __DIR__ . '/auth.php';
