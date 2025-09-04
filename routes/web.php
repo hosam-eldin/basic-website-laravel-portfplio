@@ -4,8 +4,11 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeSliderController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\FooterController;
 use App\Http\Controllers\MultiImagesController;
 use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\ContactController;
+use App\Models\Footer;
 use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -69,6 +72,22 @@ Route::controller(PortfolioController::class)->group(function () {
     Route::post('Update/portfolio/{id}', 'updatePortfolio')->name('update.portfolio');
     Route::get('delete/portfolio/{id}', 'deletePortfolio')->name('delete.portfolio');
     Route::get('portfolio/details/{id}', 'portfolioDetails')->name('portfolio.details');
+});
+
+Route::controller(FooterController::class)->group(function () {
+    Route::get('footer/setup', 'footerSetup')->name('footer.setup');
+    Route::get('footer/show', 'footerShow')->name('footer.show');
+    Route::post('footer/store', 'store')->name('store.footer');
+    Route::get('footer/edit/{id}', 'edit')->name('edit.footer');
+    Route::post('footer/update/{id}', 'update')->name('update.footer');
+    Route::get('footer/delete/{id}', 'delete')->name('delete.footer');
+});
+
+Route::controller(ContactController::class)->group(function () {
+    Route::get('contact', 'contact')->name('contact');
+    Route::post('contact/store', 'store')->name('contact.store');
+    Route::get('admin/contact', 'adminContact')->name('admin.contact');
+    Route::get('delete/message/{id}', 'deleteMessage')->name('delete.message');
 });
 
 require __DIR__ . '/auth.php';
