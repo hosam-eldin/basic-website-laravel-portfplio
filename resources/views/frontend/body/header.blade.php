@@ -14,11 +14,13 @@
                      </div>
                      <div class="navbar__wrap main__menu d-none d-xl-flex">
                         <ul class="navigation">
-                           <li class="active"><a href="{{ url('/') }}">Home</a>
+                           <li class="{{ request()->is('/') ? 'active' : '' }}"><a href="{{ url('/') }}">Home</a>
                            </li>
-                           <li><a href="{{ route('about') }}">About</a></li>
+                           <li class="{{ request()->is('about') ? 'active' : '' }}"><a
+                                 href="{{ route('about') }}">About</a></li>
                            {{-- <li><a href="services-details.html">Services</a></li> --}}
-                           <li><a href="{{ route('portfolio.index') }}">Portfolios</a>
+                           <li class="{{ request()->is('portfolio') ? 'active' : '' }}"><a
+                                 href="{{ route('portfolio.index') }}">Portfolios</a>
 
                            </li>
                            {{-- <li class="menu-item-has-children"><a href="#">Our Blog</a>
@@ -27,7 +29,8 @@
                                  <li><a href="blog-details.html">News Details</a></li>
                               </ul>
                            </li> --}}
-                           <li><a href="{{ route('contact') }}">contact me</a></li>
+                           <li class="{{ request()->is('contact') ? 'active' : '' }}"><a
+                                 href="{{ route('contact') }}">contact me</a></li>
                         </ul>
                      </div>
                      <div class="header__btn d-none d-md-block">
